@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <style>
+        .card {
+            width: 80vw;
+            max-height: 500px;
+            margin: 0 auto;
+            margin-top: 30px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px sulid #ccc;
+        }
+
+        .card h1 {
+            font-size: 32px;
+            font-weight: 600;
+            padding-bottom: 10px;
+        }
+
+        .card h2 {
+            font-size: 24px;
+            font-weight: 600;
+            padding-bottom: 10px;
+        }
+
+        .card a {
+            color: rgb(69,89,212);
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        ul li {
+        margin-left: 15px;
+        position: relative;
+        padding-left: 5px;
+        }
+        ul li::before {
+        content: " ";
+        position: absolute;
+        width: 1px;
+        background-color: #000;
+        top: 5px;
+        bottom: -12px;
+        left: -10px;
+        }
+        .card > ul > li:first-child::before {top: 12px;}
+        ul li:not(:first-child):last-child::before {display: none;}
+        ul li:only-child::before {
+        display: list-item;
+        content: " ";
+        position: absolute;
+        width: 1px;
+        background-color: #000;
+        top: 5px;
+        bottom: 7px;
+        height: 7px;
+        left: -10px;
+        }
+        ul li::after {
+        content: " ";
+        position: absolute;
+        left: -10px;
+        width: 10px;
+        height: 1px;
+        background-color: #000;
+        top: 12px;
+        }
+
+        .version {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            margin: 0 auto;
+            width: 80vw;
+            flex: auto;
+            flex-direction: column;
+        }
+
+        .version a {
+            color: rgb(69,89,212);
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        .version span {
+            font-size: 15px;
+            padding: 15px;
+            font-weight: 600;
+        }
+
+        .version hr {
+            margin-top: 18px;
+            margin-bottom: 18px;
+        }
+
+        .right-border {
+            border-right: 1px sulid #ccc;
+        }
+    </style>
+    <div class="card">
+        <h1>Email SMS</h1>
+        <hr />
+        <div class="us-scroll" style="overflow-y: auto; max-height: 400px; padding-top: 5px;">
+            <p>Send text messages for free from ServiceNow by utilizing the cellphone carrier email domains</p>
+            <p>Before you can send text messages to a user you must first have at a minimum the following information for your users:</p>
+            <ul>
+                <li>
+                    <strong style="color:red;">Required Fields</strong>
+                    <ul>
+                        <li>Mobile Phone</li>
+                        <li>Mobile Provider</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>When the mobile provider and mobile phone number is present the field Cell Email gets calculated</p>
+            <p>For example: Mobile Phone: (555) 555-0004, Mobile Provider AT&T Mobility, creates cell email 5555550004@mms.att.net</p>
+            <p>You can try this with your own cell phone provider and send an email to your cell email, you should receive a text message</p>
+            <p>This is all possible because of something called SMS and MMS Carrier Gateway Domains</p>
+            <p>The Email SMS app comes pre-loaded with 150+ pre configured Carrier Gateway Domains, but you can always expand the list by adding records to the Providers table</p>
+            <p>The custom fields Mobile Provider and Cell Email are by default not added on the User Table form and must be configured post installation</p>
+            <p>For more information on SMS and MMS Carrier Gateway Domains visit <a href="https://en.wikipedia.org/wiki/SMS_gateway#SMS_and_MMS_carrier_gateway_domains">https://en.wikipedia.org/wiki/SMS_gateway#SMS_and_MMS_carrier_gateway_domains</a></p>
+        </div>
+    </div>
+
+    <div class="version">
+        <hr />
+        <div>
+            <span class="right-border">Version 1.0.0</span>
+            <span class="right-border">Created By: Geni Palla</span>
+            <span class="right-border">Website: <a target="_blank" href="https://updateset.com">https://updateset.com</a></span>
+            <span>Contact Us: <a href="mailto:hello@updateset.com">hello@updateset.com</a></span>
+        </div>
+        <hr />
+    </div>
+    <div class="card">
+        <h1>Installation</h1>
+        <hr />
+        <div class="us-scroll" style="overflow-y: auto; max-height: 400px; padding-top: 5px;">
+            <section>
+                <div>
+                    <p><strong>Procedure</strong></p>
+                </div>
+                <ol>
+                    <li>
+                        Navigate to <strong>All</strong><abbr> &gt; </abbr><strong>System Update Sets</strong><abbr> &gt; </abbr><strong>Retrieved Update Sets</strong> and open the update set.
+                    </li>
+                    <li>
+                        Use the related link <strong>Import Update Set from XML</strong> and select the XML downloded form the GitHub Repo.
+                    </li>
+                    <li>
+                        Search for Update Set name <strong>Email SMS</strong> and click it.
+                    </li>
+                    <li>
+                        Preview the Update Set
+                    </li>
+                    <li>
+                        <span>Click <span>Commit Update Set</span>.</span>
+                        <div>
+                            <ul>
+                                <li>Click <strong>Cancel</strong> to return to the preview and reevaluate
+                                    the change.
+                                    None of the updates are committed.</li>
+                                <li>Click <strong>OK</strong> to skip the change and continue committing the
+                                    changes
+                                    that are marked as <strong>Commit</strong>.</li>
+                            </ul>
+                        </div>
+                        <div>If the update set contains one or more DELETEs for schema, the system
+                            displays a warning. The warning lists up to five updates that may contain
+                            problems. If more than five updates have potential problems, the system provides
+                            a link.<p>When the system successfully commits an update set, it displays a
+                                completion page.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span>[Recommended] Click <strong>Commit log</strong> on the confirmation
+                            page,
+                            or navigate to <strong>System Update Sets</strong><abbr>
+                                    &gt; </abbr><strong>Update log</strong> and filter for the update set
+                            name.</span>
+                        <div>
+                            <ul>
+                                <li>Look for warnings that contain the text <strong>unsafe
+                                        edit</strong>. The system automatically skips any changes that
+                                    results in data loss, such as changing the type of a field that contains
+                                    data. You must manually make any of these changes, if necessary. Use
+                                    caution when making changes that affect production data.</li>
+                                <li>Look for errors that indicate which records failed to commit and why.
+                                    Create a new update set to address those failures, if necessary.</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ol>
+            </section>
+        </div>
+    </div>
+
+    <div class="card">
+        <h1>Release Notes</h1>
+        <hr />
+        <div class="us-scroll" style="overflow-y: auto; max-height: 400px; padding-top: 5px;">
+            <ul>
+                <li><strong>Version 1.0.0</strong>
+                    <ul>
+                        <li>Pre Mapped Carrier Gateway Domains</li>
+                        <li>User Auto Calculated Carrier Email</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card">
+        <h1>Files</h1>
+        <hr />
+        <div class="us-scroll" style="overflow-y: auto; max-height: 400px; padding-top: 5px;">
+            <ul>
+                <li><strong>Module</strong>
+                    <ul>
+                        <li>Imp Tmpl Providers - sys_app_module_959ddc748d6120102ec82f339326a164</li>
+                    </ul>
+                </li>
+                <li><strong>Data Source</strong>
+                    <ul>
+                        <li>providers.xlsx (Uploaded) - sys_data_source_909d9c748d6120102ec82f339326a197</li>
+                    </ul>
+                </li>
+                <li><strong>Table</strong>
+                    <ul>
+                        <li>Providers - sys_db_object_0e7d2d84c52120102ec8615701366c86</li>
+                        <li>Imp Tmpl Providers - sys_db_object_649d9c748d6120102ec82f339326a1a9</li>
+                    </ul>
+                </li>
+                <li><strong>Dictionary Entry</strong>
+                    <ul>
+                        <li>Mobile Provider - sys_dictionary_sys_user_mobile_provider</li>
+                        <li>Active - sys_dictionary_providers_active</li>
+                        <li>Email Postfix - sys_dictionary_providers_email_postfix</li>
+                        <li>Email Postfix - sys_dictionary_u_imp_tmpl_providers_u_email_postfix</li>
+                        <li>Name - sys_dictionary_providers_name</li>
+                        <li>u_imp_tmpl_providers - sys_dictionary_u_imp_tmpl_providers_null</li>
+                        <li>Active - sys_dictionary_u_imp_tmpl_providers_u_active</li>
+                        <li>Name - sys_dictionary_u_imp_tmpl_providers_u_name</li>
+                        <li>Cell Email - sys_dictionary_sys_user_u_cell_email</li>
+                        <li>providers - sys_dictionary_providers_null</li>
+                        <li>Country - sys_dictionary_providers_country</li>
+                        <li>Country - sys_dictionary_u_imp_tmpl_providers_u_country</li>
+                    </ul>
+                </li>
+                <li><strong>Field Label</strong>
+                    <ul>
+                        <li>Providers - sys_documentation_providers__en</li>
+                        <li>Active - sys_documentation_providers_active_en</li>
+                        <li>Mobile Provider - sys_documentation_sys_user_mobile_provider_en</li>
+                        <li>Active - sys_documentation_u_imp_tmpl_providers_u_active_en</li>
+                        <li>Country - sys_documentation_providers_country_en</li>
+                        <li>Name - sys_documentation_u_imp_tmpl_providers_u_name_en</li>
+                        <li>Email Postfix - sys_documentation_providers_email_postfix_en</li>
+                        <li>Name - sys_documentation_providers_name_en</li>
+                        <li>Imp Tmpl Providers - sys_documentation_u_imp_tmpl_providers__en</li>
+                        <li>Country - sys_documentation_u_imp_tmpl_providers_u_country_en</li>
+                        <li>Email Postfix - sys_documentation_u_imp_tmpl_providers_u_email_postfix_en</li>
+                        <li>Cell Email - sys_documentation_sys_user_u_cell_email_en</li>
+                    </ul>
+                </li>
+                <li><strong>Embedded Help Role Priority</strong>
+                    <ul>
+                        <li>ecbd2584c52120102ec8615701366ca5 - sys_embedded_help_role_ecbd2584c52120102ec8615701366ca8</li>
+                    </ul>
+                </li>
+                <li><strong>Metadata Snapshot</strong>
+                    <ul>
+                        <li>Movistar - sys_metadata_link_02e4d1a11cb120102ec8ccbee0cd6803</li>
+                        <li>Gujarat Idea Cellular - sys_metadata_link_03f455a11cb120102ec8ccbee0cd68c9</li>
+                        <li>Virgin Mobile - sys_metadata_link_06e491a11cb120102ec8ccbee0cd68e1</li>
+                        <li>U.S. Cellular - sys_metadata_link_06e491a11cb120102ec8ccbee0cd68fb</li>
+                        <li>Andhra Pradesh Idea - sys_metadata_link_07f455a11cb120102ec8ccbee0cd68c1</li>
+                        <li>Greatcall - sys_metadata_link_07f455a11cb120102ec8ccbee0cd68fe</li>
+                        <li>Telcel - sys_metadata_link_0ae491a11cb120102ec8ccbee0cd68d9</li>
+                        <li>Sendega - sys_metadata_link_0ae4d1a11cb120102ec8ccbee0cd6812</li>
+                        <li>Alltel (Allied Wireless) - sys_metadata_link_0bf455a11cb120102ec8ccbee0cd68cd</li>
+                        <li>Bluesky Communications - sys_metadata_link_0bf455a11cb120102ec8ccbee0cd68d7</li>
+                        <li>Verizon Wireless - sys_metadata_link_0ee491a11cb120102ec8ccbee0cd68d1</li>
+                        <li>Mobiltel - sys_metadata_link_0ee4d1a11cb120102ec8ccbee0cd680a</li>
+                        <li>Accessyou - sys_metadata_link_0ff455a11cb120102ec8ccbee0cd68b2</li>
+                        <li>Esendex - sys_metadata_link_0ff455a11cb120102ec8ccbee0cd68bc</li>
+                        <li>SMS Broadcast - sys_metadata_link_12e4d1a11cb120102ec8ccbee0cd6822</li>
+                        <li>Simple Mobile - sys_metadata_link_12e4d1a11cb120102ec8ccbee0cd6870</li>
+                        <li>South Central Communications - sys_metadata_link_16e4d1a11cb120102ec8ccbee0cd681a</li>
+                        <li>Nextel - sys_metadata_link_16e4d1a11cb120102ec8ccbee0cd6839</li>
+                        <li>Southernlinc - sys_metadata_link_16e4d1a11cb120102ec8ccbee0cd6868</li>
+                        <li>Personal - sys_metadata_link_1ae4d1a11cb120102ec8ccbee0cd6831</li>
+                        <li>T-Mobile - sys_metadata_link_1ee4d1a11cb120102ec8ccbee0cd6829</li>
+                        <li>Cricket - sys_metadata_link_1ff495a11cb120102ec8ccbee0cd6812</li>
+                        <li>Claro - sys_metadata_link_1ff495a11cb120102ec8ccbee0cd681c</li>
+                        <li>Emtel - sys_metadata_link_1ff495a11cb120102ec8ccbee0cd6826</li>
+                        <li>Vodacom - sys_metadata_link_2ae4d1a11cb120102ec8ccbee0cd6894</li>
+                        <li>UniMóvil Corporation - sys_metadata_link_2ee4d1a11cb120102ec8ccbee0cd688c</li>
+                        <li>Vivo - sys_metadata_link_2ee4d1a11cb120102ec8ccbee0cd68a6</li>
+                        <li>CSL - sys_metadata_link_2ef415a11cb120102ec8ccbee0cd6828</li>
+                        <li>Pioneer Cellular - sys_metadata_link_31e491a11cb120102ec8ccbee0cd6862</li>
+                        <li>Síminn - sys_metadata_link_31e491a11cb120102ec8ccbee0cd6896</li>
+                        <li>My-Cool-SMS - sys_metadata_link_31e491a11cb120102ec8ccbee0cd68ca</li>
+                        <li>Boost Mobile - sys_metadata_link_32f455a11cb120102ec8ccbee0cd6888</li>
+                        <li>SMSPUP - sys_metadata_link_35e491a11cb120102ec8ccbee0cd688e</li>
+                        <li>Más Móvil - sys_metadata_link_35e491a11cb120102ec8ccbee0cd68c2</li>
+                        <li>Himachai Pradesh Airtel - sys_metadata_link_36f455a11cb120102ec8ccbee0cd689a</li>
+                        <li>Koodo Mobile - sys_metadata_link_39e491a11cb120102ec8ccbee0cd6886</li>
+                        <li>Virgin Mobile - sys_metadata_link_39e491a11cb120102ec8ccbee0cd68ba</li>
+                        <li>Hawaiian Telcom - sys_metadata_link_3af455a11cb120102ec8ccbee0cd6879</li>
+                        <li>Gujarat Celforce / Fascel - sys_metadata_link_3af455a11cb120102ec8ccbee0cd6883</li>
+                        <li>Bell Mobility - sys_metadata_link_3af455a11cb120102ec8ccbee0cd689c</li>
+                        <li>Nextech - sys_metadata_link_3de491a11cb120102ec8ccbee0cd6869</li>
+                        <li>T-Mobile - sys_metadata_link_3de491a11cb120102ec8ccbee0cd689d</li>
+                        <li>Bouygues Telecom - sys_metadata_link_3ef455a11cb120102ec8ccbee0cd6867</li>
+                        <li>Airtel - sys_metadata_link_3ef455a11cb120102ec8ccbee0cd6871</li>
+                        <li>AT&T Mobility - sys_metadata_link_3ef455a11cb120102ec8ccbee0cd687b</li>
+                        <li>Digicel - sys_metadata_link_3ef455a11cb120102ec8ccbee0cd68a8</li>
+                        <li>SMS Central - sys_metadata_link_42e491a11cb120102ec8ccbee0cd68e7</li>
+                        <li>Qwest Wireless - sys_metadata_link_42e4d1a11cb120102ec8ccbee0cd6801</li>
+                        <li>E-Plus - sys_metadata_link_43f455a11cb120102ec8ccbee0cd68c7</li>
+                        <li>TIM - sys_metadata_link_46e491a11cb120102ec8ccbee0cd68df</li>
+                        <li>Voyager Mobile - sys_metadata_link_46e491a11cb120102ec8ccbee0cd68f9</li>
+                        <li>I-wireless(Sprint PCS) - sys_metadata_link_47f455a11cb120102ec8ccbee0cd68d3</li>
+                        <li>Helio - sys_metadata_link_47f455a11cb120102ec8ccbee0cd68dd</li>
+                        <li>CTI Móvil (Now Claro) - sys_metadata_link_47f455a11cb120102ec8ccbee0cd68fc</li>
+                        <li>T-Mobile - sys_metadata_link_4ae491a11cb120102ec8ccbee0cd68d7</li>
+                        <li>Nextel - sys_metadata_link_4ae4d1a11cb120102ec8ccbee0cd6810</li>
+                        <li>Kolkata Airtel - sys_metadata_link_4bf455a11cb120102ec8ccbee0cd68ae</li>
+                        <li>AirFire Mobile - sys_metadata_link_4bf455a11cb120102ec8ccbee0cd68d5</li>
+                        <li>Andhra Pradesh AirTel - sys_metadata_link_4bf455a11cb120102ec8ccbee0cd68df</li>
+                        <li>Pocket Wireless - sys_metadata_link_4ee491a11cb120102ec8ccbee0cd68cf</li>
+                        <li>SFR - sys_metadata_link_4ee4d1a11cb120102ec8ccbee0cd6808</li>
+                        <li>CellCom - sys_metadata_link_4ff455a11cb120102ec8ccbee0cd68b0</li>
+                        <li>China Mobile - sys_metadata_link_4ff455a11cb120102ec8ccbee0cd68ba</li>
+                        <li>XIT Communications - sys_metadata_link_52e4d1a11cb120102ec8ccbee0cd6820</li>
+                        <li>MTN - sys_metadata_link_52e4d1a11cb120102ec8ccbee0cd683f</li>
+                        <li>Wind Mobile - sys_metadata_link_52e4d1a11cb120102ec8ccbee0cd686e</li>
+                        <li>Virgin Mobile - sys_metadata_link_56e4d1a11cb120102ec8ccbee0cd6818</li>
+                        <li>Maharashtra Airtel - sys_metadata_link_56e4d1a11cb120102ec8ccbee0cd6837</li>
+                        <li>Polkomtel - sys_metadata_link_56e4d1a11cb120102ec8ccbee0cd6866</li>
+                        <li>Movistar - sys_metadata_link_5ae4d1a11cb120102ec8ccbee0cd682f</li>
+                        <li>Vodafone - sys_metadata_link_5ee4d1a11cb120102ec8ccbee0cd6827</li>
+                        <li>T-Mobile - sys_metadata_link_5ee4d1a11cb120102ec8ccbee0cd688a</li>
+                        <li>Bluegrass Cellular - sys_metadata_link_5ff495a11cb120102ec8ccbee0cd681a</li>
+                        <li>Chennai RPG Cellular - sys_metadata_link_5ff495a11cb120102ec8ccbee0cd6824</li>
+                        <li>Straight Talk - sys_metadata_link_61e495611cb120102ec8ccbee0cd6876</li>
+                        <li>TracFone (prepaid) - sys_metadata_link_6ae4d1a11cb120102ec8ccbee0cd6892</li>
+                        <li>Karnataka Airtel - sys_metadata_link_6af455a11cb120102ec8ccbee0cd6863</li>
+                        <li>TellusTalk - sys_metadata_link_6ee4d1a11cb120102ec8ccbee0cd68a4</li>
+                        <li>Google Project Fi - sys_metadata_link_6ef415a11cb120102ec8ccbee0cd6822</li>
+                        <li>Cellular South - sys_metadata_link_6ef415a11cb120102ec8ccbee0cd6826</li>
+                        <li>Alaska Communications - sys_metadata_link_6ef455a11cb120102ec8ccbee0cd6865</li>
+                        <li>West Central Wireless - sys_metadata_link_71e491a11cb120102ec8ccbee0cd6894</li>
+                        <li>M1 - sys_metadata_link_71e491a11cb120102ec8ccbee0cd68c8</li>
+                        <li>Aio Wireless - sys_metadata_link_72f455a11cb120102ec8ccbee0cd6886</li>
+                        <li>Republic Wireless - sys_metadata_link_75e491a11cb120102ec8ccbee0cd688c</li>
+                        <li>Viaero - sys_metadata_link_75e491a11cb120102ec8ccbee0cd68c0</li>
+                        <li>General Communications Inc. - sys_metadata_link_76f455a11cb120102ec8ccbee0cd6898</li>
+                        <li>Haryana Escotel - sys_metadata_link_76f455a11cb120102ec8ccbee0cd68a2</li>
+                        <li>Ting - sys_metadata_link_79e491a11cb120102ec8ccbee0cd68b8</li>
+                        <li>ICE - sys_metadata_link_7af455a11cb120102ec8ccbee0cd686d</li>
+                        <li>Fido - sys_metadata_link_7af455a11cb120102ec8ccbee0cd6877</li>
+                        <li>Element Mobile - sys_metadata_link_7af455a11cb120102ec8ccbee0cd6881</li>
+                        <li>Madhya Pradesh Airtel - sys_metadata_link_7de491a11cb120102ec8ccbee0cd6867</li>
+                        <li>Vodafone - sys_metadata_link_7de491a11cb120102ec8ccbee0cd689b</li>
+                        <li>AirCel - sys_metadata_link_7ef455a11cb120102ec8ccbee0cd686f</li>
+                        <li>Chat Mobility - sys_metadata_link_7ef455a11cb120102ec8ccbee0cd68a6</li>
+                        <li>Telstra - sys_metadata_link_82e491a11cb120102ec8ccbee0cd68e5</li>
+                        <li>MTS Mobility - sys_metadata_link_82e491a11cb120102ec8ccbee0cd68ff</li>
+                        <li>Delhi Airtel - sys_metadata_link_83f455a11cb120102ec8ccbee0cd68c5</li>
+                        <li>TeletopiaSMS - sys_metadata_link_86e491a11cb120102ec8ccbee0cd68dd</li>
+                        <li>US Cellular - sys_metadata_link_86e491a11cb120102ec8ccbee0cd68f7</li>
+                        <li>Tigo (Formerly Ola) - sys_metadata_link_86e4d1a11cb120102ec8ccbee0cd6816</li>
+                        <li>Goa Airtel - sys_metadata_link_87f455a11cb120102ec8ccbee0cd68d1</li>
+                        <li>Freebie SMS - sys_metadata_link_87f455a11cb120102ec8ccbee0cd68db</li>
+                        <li>Centennial Wireless - sys_metadata_link_87f455a11cb120102ec8ccbee0cd68fa</li>
+                        <li>Page Plus Cellular (Verizon) - sys_metadata_link_8ae491a11cb120102ec8ccbee0cd68d5</li>
+                        <li>Maharashtra Idea - sys_metadata_link_8ae4d1a11cb120102ec8ccbee0cd680e</li>
+                        <li>Kajeet - sys_metadata_link_8bf455a11cb120102ec8ccbee0cd68b6</li>
+                        <li>Movistar - sys_metadata_link_8ee491a11cb120102ec8ccbee0cd68cd</li>
+                        <li>Plus - sys_metadata_link_8ee4d1a11cb120102ec8ccbee0cd6806</li>
+                        <li>Beeline - sys_metadata_link_8ff455a11cb120102ec8ccbee0cd68b8</li>
+                        <li>Uttar Pradesh West Escotel - sys_metadata_link_92e4d1a11cb120102ec8ccbee0cd681e</li>
+                        <li>LongLines - sys_metadata_link_92e4d1a11cb120102ec8ccbee0cd683d</li>
+                        <li>UTBox - sys_metadata_link_92e4d1a11cb120102ec8ccbee0cd686c</li>
+                        <li>Orange - sys_metadata_link_96e4d1a11cb120102ec8ccbee0cd6835</li>
+                        <li>Box Internet Services - sys_metadata_link_97f495a11cb120102ec8ccbee0cd6804</li>
+                        <li>Vodafone - sys_metadata_link_9ae4d1a11cb120102ec8ccbee0cd682d</li>
+                        <li>I-wireless(T-Mobile) - sys_metadata_link_9bf495a11cb120102ec8ccbee0cd6816</li>
+                        <li>HSL Mobile - sys_metadata_link_9bf495a11cb120102ec8ccbee0cd6820</li>
+                        <li>Union Wireless - sys_metadata_link_9ee4d1a11cb120102ec8ccbee0cd6825</li>
+                        <li>Airtel - sys_metadata_link_9ff495a11cb120102ec8ccbee0cd6818</li>
+                        <li>AT&T Enterprise Paging - sys_metadata_link_9ff495a11cb120102ec8ccbee0cd6822</li>
+                        <li>T-Mobile (Optus Zoo) - sys_metadata_link_aae4d1a11cb120102ec8ccbee0cd6890</li>
+                        <li>Ameritech - sys_metadata_link_aef415a11cb120102ec8ccbee0cd6824</li>
+                        <li>USA Mobility - sys_metadata_link_b1e491a11cb120102ec8ccbee0cd6892</li>
+                        <li>Setar Mobile email (Aruba) - sys_metadata_link_b1e491a11cb120102ec8ccbee0cd68c6</li>
+                        <li>PC Telecom - sys_metadata_link_b5e491a11cb120102ec8ccbee0cd688a</li>
+                        <li>Telus Mobility - sys_metadata_link_b5e491a11cb120102ec8ccbee0cd68be</li>
+                        <li>Cleartalk - sys_metadata_link_b6f455a11cb120102ec8ccbee0cd6896</li>
+                        <li>Esendex - sys_metadata_link_b6f455a11cb120102ec8ccbee0cd68a0</li>
+                        <li>Globalstar - sys_metadata_link_baf455a11cb120102ec8ccbee0cd686b</li>
+                        <li>Claro - sys_metadata_link_baf455a11cb120102ec8ccbee0cd6875</li>
+                        <li>DTC - sys_metadata_link_baf455a11cb120102ec8ccbee0cd687f</li>
+                        <li>Gujarat Airtel - sys_metadata_link_baf455a11cb120102ec8ccbee0cd68ac</li>
+                        <li>OgVodafone - sys_metadata_link_bde491a11cb120102ec8ccbee0cd6865</li>
+                        <li>Unicel - sys_metadata_link_bde491a11cb120102ec8ccbee0cd6899</li>
+                        <li>Movistar - sys_metadata_link_bde495611cb120102ec8ccbee0cd6878</li>
+                        <li>Assurance Wireless - sys_metadata_link_bef455a11cb120102ec8ccbee0cd68a4</li>
+                        <li>Spikko - sys_metadata_link_c2e491a11cb120102ec8ccbee0cd68e3</li>
+                        <li>Lynx Mobility - sys_metadata_link_c2e491a11cb120102ec8ccbee0cd68fd</li>
+                        <li>Chariton Valley Wireless - sys_metadata_link_c3f455a11cb120102ec8ccbee0cd68c3</li>
+                        <li>Vodafone - sys_metadata_link_c6e491a11cb120102ec8ccbee0cd68db</li>
+                        <li>Tamil Nadu Aircel - sys_metadata_link_c6e491a11cb120102ec8ccbee0cd68f5</li>
+                        <li>Syringa Wireless - sys_metadata_link_c6e4d1a11cb120102ec8ccbee0cd6814</li>
+                        <li>C Spire Wireless - sys_metadata_link_c7f455a11cb120102ec8ccbee0cd68cf</li>
+                        <li>Claro - sys_metadata_link_c7f455a11cb120102ec8ccbee0cd68d9</li>
+                        <li>Mobitel - sys_metadata_link_cae491a11cb120102ec8ccbee0cd68d3</li>
+                        <li>Orange - sys_metadata_link_cae4d1a11cb120102ec8ccbee0cd680c</li>
+                        <li>Goa Idea Cellular - sys_metadata_link_cbf455a11cb120102ec8ccbee0cd68b4</li>
+                        <li>Haryana Airtel - sys_metadata_link_cbf455a11cb120102ec8ccbee0cd68be</li>
+                        <li>Mumbai Airtel - sys_metadata_link_cee4d1a11cb120102ec8ccbee0cd6804</li>
+                        <li>Kerala Escotel - sys_metadata_link_cff455a11cb120102ec8ccbee0cd68ca</li>
+                        <li>Teleflip - sys_metadata_link_d2e4d1a11cb120102ec8ccbee0cd681c</li>
+                        <li>SaskTel - sys_metadata_link_d2e4d1a11cb120102ec8ccbee0cd683b</li>
+                        <li>Telecom - sys_metadata_link_d2e4d1a11cb120102ec8ccbee0cd686a</li>
+                        <li>Kerala Airtel - sys_metadata_link_d3f495a11cb120102ec8ccbee0cd6800</li>
+                        <li>MetroPCS - sys_metadata_link_d6e4d1a11cb120102ec8ccbee0cd6833</li>
+                        <li>Aliant Canada - sys_metadata_link_d7f495a11cb120102ec8ccbee0cd6802</li>
+                        <li>Txtlocal - sys_metadata_link_dae4d1a11cb120102ec8ccbee0cd682b</li>
+                        <li>Globul - sys_metadata_link_dbf495a11cb120102ec8ccbee0cd6814</li>
+                        <li>Firmensms - sys_metadata_link_dbf495a11cb120102ec8ccbee0cd681e</li>
+                        <li>Guyana T&T - sys_metadata_link_dbf495a11cb120102ec8ccbee0cd6828</li>
+                        <li>Tamil Nadu Airtel - sys_metadata_link_dee4d1a11cb120102ec8ccbee0cd6823</li>
+                        <li>Sunrise Communications - sys_metadata_link_e6e4d1a11cb120102ec8ccbee0cd6896</li>
+                        <li>Vodafone - sys_metadata_link_eae4d1a11cb120102ec8ccbee0cd688e</li>
+                        <li>Golden State Cellular - sys_metadata_link_eaf415a11cb120102ec8ccbee0cd682a</li>
+                        <li>Tele2 - sys_metadata_link_f1e491a11cb120102ec8ccbee0cd6890</li>
+                        <li>O2 - sys_metadata_link_f1e491a11cb120102ec8ccbee0cd68c4</li>
+                        <li>Movistar - sys_metadata_link_f5e491a11cb120102ec8ccbee0cd6888</li>
+                        <li>Sprint - sys_metadata_link_f5e491a11cb120102ec8ccbee0cd68bc</li>
+                        <li>Cincinnati Bell - sys_metadata_link_f6f455a11cb120102ec8ccbee0cd689e</li>
+                        <li>Rogers Wireless - sys_metadata_link_f9e491a11cb120102ec8ccbee0cd686b</li>
+                        <li>Claro - sys_metadata_link_faf455a11cb120102ec8ccbee0cd6869</li>
+                        <li>BellSouth - sys_metadata_link_faf455a11cb120102ec8ccbee0cd6873</li>
+                        <li>Chennai Skycell / Airtel - sys_metadata_link_faf455a11cb120102ec8ccbee0cd687d</li>
+                        <li>Edge Wireless - sys_metadata_link_faf455a11cb120102ec8ccbee0cd68aa</li>
+                        <li>Mediaburst - sys_metadata_link_fde491a11cb120102ec8ccbee0cd6863</li>
+                        <li>T-Mobile - sys_metadata_link_fde491a11cb120102ec8ccbee0cd6897</li>
+                        <li>Red Pocket Mobile - sys_metadata_link_fde491a11cb120102ec8ccbee0cd68cb</li>
+                    </ul>
+                </li>
+                <li><strong>Access Control</strong>
+                    <ul>
+                        <li>providers - sys_security_acl_38bded84c52120102ec8615701366cad</li>
+                        <li>providers - sys_security_acl_85bded84c52120102ec8615701366cbe</li>
+                        <li>providers - sys_security_acl_cdbded84c52120102ec8615701366cb5</li>
+                        <li>providers - sys_security_acl_f4bded84c52120102ec8615701366ca2</li>
+                    </ul>
+                </li>
+                <li><strong>Access Roles</strong>
+                    <ul>
+                        <li>providers.providers_user - sys_security_acl_role_49bded84c52120102ec8615701366cc2</li>
+                        <li>providers.providers_user - sys_security_acl_role_81bded84c52120102ec8615701366cba</li>
+                        <li>providers.providers_user - sys_security_acl_role_bcbded84c52120102ec8615701366ca7</li>
+                        <li>providers.providers_user - sys_security_acl_role_f8bded84c52120102ec8615701366cb1</li>
+                    </ul>
+                </li>
+                <li><strong>Field Map</strong>
+                    <ul>
+                        <li>u_name - sys_transform_entry_6b4251211cb120102ec8ccbee0cd68d9</li>
+                        <li>u_active - sys_transform_entry_e34251211cb120102ec8ccbee0cd68df</li>
+                        <li>u_email_postfix - sys_transform_entry_e74251211cb120102ec8ccbee0cd68dd</li>
+                        <li>u_country - sys_transform_entry_eb4251211cb120102ec8ccbee0cd68db</li>
+                    </ul>
+                </li>
+                <li><strong>Table Transform Map</strong>
+                    <ul>
+                        <li>u_imp_tmpl_providers - sys_transform_map_974251211cb120102ec8ccbee0cd68d7</li>
+                    </ul>
+                </li>
+                <li><strong>List</strong>
+                    <ul>
+                        <li>providers - sys_ui_list_providers_sys_ref_list</li>
+                        <li>providers - sys_ui_list_providers_null</li>
+                        <li>u_imp_tmpl_providers - sys_ui_list_u_imp_tmpl_providers_null</li>
+                    </ul>
+                </li>
+                <li><strong>Form Section</strong>
+                    <ul>
+                        <li>u_imp_tmpl_providers - sys_ui_section_6d9ddc748d6120102ec82f339326a173</li>
+                        <li>providers - sys_ui_section_cfea18b08d6120102ec82f339326a153</li>
+                    </ul>
+                </li>
+                <li><strong>Role</strong>
+                    <ul>
+                        <li>providers_user - sys_user_role_ecbd2584c52120102ec8615701366ca5</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
