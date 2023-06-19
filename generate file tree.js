@@ -1,7 +1,7 @@
 var processedClasses = [];
 
 var html ='<ul> \n';
-var app = '91a725142dac20102ec860bd53910594';
+var app = '5b5f22e8b58160102ec8144fd50eff7d';
 
 var getClass = new GlideRecord('sys_metadata')
 getClass.addEncodedQuery('sys_scope='+app+'^sys_name!=NULL^sys_class_name!=sys_grid_canvas_pane^ORsys_class_name=NULL');

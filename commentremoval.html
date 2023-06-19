@@ -105,10 +105,27 @@
         }
     </style>
     <div class="card">
-        <h1>App Name</h1>
+        <h1>Comment Removal</h1>
         <hr />
         <div class="us-scroll" style="overflow-y: auto; max-height: 400px; padding-top: 5px;">
-            <p>App Usage...</p>
+            <p>The comment removal application will remove all comments from a ticket except for system generated field change or workflow change activity stream remarks.</p>
+            <p>All work notes, comments, emails and attachment activities can be removed from the activity stream.</p>
+            <p>If you just added a comment and don&apos;t see the remove comment context menu please refresh your screen we dynamically add the menu upon the loading of the DOM.</p>
+            <p>To delete a comment simply right click on it and select <strong>Remove Comment</strong></p>            
+            <a href="https://i.postimg.cc/7Y6zT4NP/commentremoval.jpg" target="_blank"><image src="https://i.postimg.cc/7Y6zT4NP/commentremoval.jpg"></image></a>
+            <p><h1>Role(s) comment_admin</h1></p>
+            <ul>
+                <li><strong  style="color: red;">Affected Tables</strong>
+                    <ul>
+                        <li>Journal Entry</li>
+                        <li>Sys Audit History Set</li>
+                        <li>Email Entry</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p><strong style="color: red;">Caution This script will remove all email log records for the selected record.</strong></p>
+            <p><strong style="color: red;">Caution although unlikely if there are 2 comments with the same exact content then you may remove the wrong one.</strong></p>
         </div>
     </div>
 
@@ -138,7 +155,7 @@
                         Use the related link <strong>Import Update Set from XML</strong> and select the XML downloded form the GitHub Repo.
                     </li>
                     <li>
-                        Search for Update Set name <strong>[INSERT UPDATE SET NAME]</strong> and click it.
+                        Search for Update Set name <strong>Comment Removal</strong> and click it.
                     </li>
                     <li>
                         Preview the Update Set
@@ -192,9 +209,7 @@
             <ul>
                 <li><strong>Version 1.0.0</strong>
                     <ul>
-                        <li>Feature 1</li>
-                        <li>Feature 2</li>
-                        <li>Feature 3</li>
+                        <li>Remove Comment</li>
                     </ul>
                 </li>
             </ul>
@@ -206,28 +221,24 @@
         <hr />
         <div class="us-scroll" style="overflow-y: auto; max-height: 400px; padding-top: 5px;">
             <ul>
-                <li>Tables
+                <li><strong>Embedded Help Role Priority</strong>
                     <ul>
-                        <li>Test</li>
-                        <li>Test</li>
+                        <li>e0feccc1694d20102ec8b81f66f0f36c - sys_embedded_help_role_0c0f0005694d20102ec8b81f66f0f33f</li>
                     </ul>
                 </li>
-                <li>Business Rules
+                <li><strong>Script Include</strong>
                     <ul>
-                        <li>Test</li>
-                        <li>Test</li>
+                        <li>removeComment - sys_script_include_5759a634690920102ec8b81f66f0f346</li>
                     </ul>
                 </li>
-                <li>Client Scripts
+                <li><strong>UI Script</strong>
                     <ul>
-                        <li>Test</li>
-                        <li>Test</li>
+                        <li>activityContextMenu - sys_ui_script_b46148f0690120102ec8b81f66f0f349</li>
                     </ul>
                 </li>
-                <li>Script Include
-                    <ul >
-                        <li>Test</li>
-                        <li>Test</li>
+                <li><strong>Role</strong>
+                    <ul>
+                        <li>comment_admin - sys_user_role_e0feccc1694d20102ec8b81f66f0f36c</li>
                     </ul>
                 </li>
             </ul>
