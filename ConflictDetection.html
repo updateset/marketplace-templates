@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <style>
+        .card {
+            width: 80vw;
+            max-height: 500px;
+            margin: 0 auto;
+            margin-top: 30px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px sulid #ccc;
+        }
+
+        .card h1 {
+            font-size: 32px;
+            font-weight: 600;
+            padding-bottom: 10px;
+        }
+
+        .card h2 {
+            font-size: 24px;
+            font-weight: 600;
+            padding-bottom: 10px;
+        }
+
+        .card a {
+            color: rgb(69, 89, 212);
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        ul li {
+            margin-left: 15px;
+            position: relative;
+            padding-left: 5px;
+        }
+
+        ul li::before {
+            content: " ";
+            position: absolute;
+            width: 1px;
+            background-color: #000;
+            top: 5px;
+            bottom: -12px;
+            left: -10px;
+        }
+
+        .card>ul>li:first-child::before {
+            top: 12px;
+        }
+
+        ul li:not(:first-child):last-child::before {
+            display: none;
+        }
+
+        ul li:only-child::before {
+            display: list-item;
+            content: " ";
+            position: absolute;
+            width: 1px;
+            background-color: #000;
+            top: 5px;
+            bottom: 7px;
+            height: 7px;
+            left: -10px;
+        }
+
+        ul li::after {
+            content: " ";
+            position: absolute;
+            left: -10px;
+            width: 10px;
+            height: 1px;
+            background-color: #000;
+            top: 12px;
+        }
+
+        .version {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            margin: 0 auto;
+            width: 80vw;
+            flex: auto;
+            flex-direction: column;
+        }
+
+        .version a {
+            color: rgb(69, 89, 212);
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        .version span {
+            font-size: 15px;
+            padding: 15px;
+            font-weight: 600;
+        }
+
+        .version hr {
+            margin-top: 18px;
+            margin-bottom: 18px;
+        }
+
+        .right-border {
+            border-right: 1px sulid #ccc;
+        }
+    </style>
+    <div class="card">
+        <h1>Conflict Detection</h1>
+        <hr />
+        <div class="us-scroll" style="overflow-y: auto; max-height: 400px; padding-top: 5px;">
+            <p>A ServiceNow developers most annoying pet peeve  is when they are working on a story or feature, and they end up updating a record that their teammate  already changed in their Update Set.</p>
+            <p>With the Conflict Detection app, you get global notifications every time you are about to update a record that lets you know if the record you are about to update that has already been modified in a different un-released update set that is not the one you currently have selected.</p>
+            <p>You will also receive a summary of conflicts on your update set of each update set you have code overlap conflicts with.</p>
+            <p>This will give greater insight to your release managers when preparing to migrate code and better understand the order of operations in which to import each update set.</p>
+
+            <h1>Example</h1>
+            <p>Consider the following scenario, there are 2 developers each working on a different feature but both features require modifying a widget.</p>
+            <ul>
+                <li><strong>Update Sets</strong>
+                    <ul>
+                        <li>STRY0010001 - Feature Example - RS1</li>
+                        <li>STRY0010002 - Feature Example 2 - RS1</li>
+                    </ul>
+                <li><strong>Widget</strong>
+                    <ul>
+                        <li>Example Widget</li>
+                    </ul>
+                </li>
+                </li>
+            </ul>
+            
+            <p>Developer 1 is working on Feature Example and Developer 2 is working on Feature Example 2. Both developers are working on the same widget but in different update sets.</p>
+            <p>STRY0010001 updates the widget first, then STRY0010002 comes to update the widget they will see the following message:</p>
+            <a href="https://i.postimg.cc/M6Fn5NCn/conflictdetection1.jpg" target="_blank"><img src="https://i.postimg.cc/M6Fn5NCn/conflictdetection1.jpg" width="100%"/></a>
+            <p>At this point if the developer ignores the warning and continues to modify the record when the release manager reviews his update set the following message will appear</p>
+            <a href="https://i.postimg.cc/SS6MSD3R/conflictdetection2.jpg" target="_blank"><img src="https://i.postimg.cc/SS6MSD3R/conflictdetection2.jpg" width="100%"/></a>
+            <p>The message will show which xml is affected and in what update set the issue belongs in.</p>
+            <p>If we click on the hyperlink to navigate to the STRY0010001 update set we will be presented with a slightly different message:</p>
+            <a href="https://i.postimg.cc/w6sW-VYyr/conflictdetection3.jpg" target="_blank"><img src="https://i.postimg.cc/w6sW-VYyr/conflictdetection3.jpg" width="100%"/></a>
+            <p>The reason the message is red and has Beware is because STRY0010002 has the newer version of the conflicting widget.</p>
+        </div>
+    </div>
+
+    <div class="version">
+        <hr />
+        <div>
+            <span class="right-border">Version 1.0.0</span>
+            <span class="right-border">Created By: Geni Palla</span>
+            <span class="right-border">Website: <a target="_blank"
+                    href="https://updateset.com">https://updateset.com</a></span>
+            <span>Contact Us: <a href="mailto:hello@updateset.com">hello@updateset.com</a></span>
+        </div>
+        <hr />
+    </div>
+    <div class="card">
+        <h1>Installation</h1>
+        <hr />
+        <div class="us-scroll" style="overflow-y: auto; max-height: 400px; padding-top: 5px;">
+            <section>
+                <div>
+                    <p><strong>Procedure</strong></p>
+                </div>
+                <ol>
+                    <li>
+                        Navigate to <strong>All</strong><abbr> &gt; </abbr><strong>System Update Sets</strong><abbr>
+                            &gt; </abbr><strong>Retrieved Update Sets</strong> and open the update set.
+                    </li>
+                    <li>
+                        Use the related link <strong>Import Update Set from XML</strong> and select the XML downloded
+                        form the GitHub Repo.
+                    </li>
+                    <li>
+                        Search for Update Set name <strong>Conflict Detection</strong> and click it.
+                    </li>
+                    <li>
+                        Preview the Update Set
+                    </li>
+                    <li>
+                        <span>Click <span>Commit Update Set</span>.</span>
+                        <div>
+                            <ul>
+                                <li>Click <strong>Cancel</strong> to return to the preview and reevaluate
+                                    the change.
+                                    None of the updates are committed.</li>
+                                <li>Click <strong>OK</strong> to skip the change and continue committing the
+                                    changes
+                                    that are marked as <strong>Commit</strong>.</li>
+                            </ul>
+                        </div>
+                        <div>If the update set contains one or more DELETEs for schema, the system
+                            displays a warning. The warning lists up to five updates that may contain
+                            problems. If more than five updates have potential problems, the system provides
+                            a link.<p>When the system successfully commits an update set, it displays a
+                                completion page.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span>[Recommended] Click <strong>Commit log</strong> on the confirmation
+                            page,
+                            or navigate to <strong>System Update Sets</strong><abbr>
+                                &gt; </abbr><strong>Update log</strong> and filter for the update set
+                            name.</span>
+                        <div>
+                            <ul>
+                                <li>Look for warnings that contain the text <strong>unsafe
+                                        edit</strong>. The system automatically skips any changes that
+                                    results in data loss, such as changing the type of a field that contains
+                                    data. You must manually make any of these changes, if necessary. Use
+                                    caution when making changes that affect production data.</li>
+                                <li>Look for errors that indicate which records failed to commit and why.
+                                    Create a new update set to address those failures, if necessary.</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ol>
+            </section>
+        </div>
+    </div>
+
+    <div class="card">
+        <h1>Release Notes</h1>
+        <hr />
+        <div class="us-scroll" style="overflow-y: auto; max-height: 400px; padding-top: 5px;">
+            <ul>
+                <li><strong>Version 1.0.0</strong>
+                    <ul>
+                        <li>Global Conflict Detection</li>
+                        <li>Update Set Conflict Summary</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card">
+        <h1>Files</h1>
+        <hr />
+        <div class="us-scroll" style="overflow-y: auto; max-height: 400px; padding-top: 5px;">
+            <ul>
+                <li><strong>Deleted Application File</strong>
+                    <ul>
+                        <li>USConflictDetection - sys_script_include_e197ab159727211067f33217f053af48</li>
+                    </ul>
+                </li>
+                <li><strong>Client Script</strong>
+                    <ul>
+                        <li>Conflict Detection - sys_script_client_a5b0b35d9727211067f33217f053afd7</li>
+                    </ul>
+                </li>
+                <li><strong>Script Include</strong>
+                    <ul>
+                        <li>USConflictDetection - sys_script_include_98ce27d99727211067f33217f053af50</li>
+                    </ul>
+                </li>
+                <li><strong>Access Control</strong>
+                    <ul>
+                        <li>USConflictDetection - sys_security_acl_c22fabd99727211067f33217f053afd1</li>
+                    </ul>
+                </li>
+                <li><strong>Access Roles</strong>
+                    <ul>
+                        <li>USConflictDetection.admin - sys_security_acl_role_022fabd99727211067f33217f053afd5</li>
+                    </ul>
+                </li>
+                <li><strong>UI Script</strong>
+                    <ul>
+                        <li>RecordUpdateConflictDetection - sys_ui_script_47523f9d9727211067f33217f053af76</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>
